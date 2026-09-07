@@ -201,7 +201,7 @@ export default function Footer({ onOpenContact }) {
           ))}
 
           {/* Contact */}
-          <div className="col-span-full flex min-w-0 flex-col items-start md:col-span-1">
+          <div className="flex min-w-0 flex-col items-start md:col-span-1">
             <h3 className={headingClass}>Contact</h3>
             <ul role="list" className="flex list-none flex-col gap-2.75 p-0 sm:gap-3.5">
               <li className="flex min-w-0 items-center gap-2 sm:gap-2.25">
@@ -224,7 +224,7 @@ export default function Footer({ onOpenContact }) {
                 <span className={contactIconClass}>
                   <MapPin size={14} strokeWidth={2} />
                 </span>
-                <span className={linkClass}>Kolkata, India</span>
+                <span className={`${linkClass} min-w-0 [overflow-wrap:anywhere]`}>Kolkata, India</span>
               </li>
             </ul>
           </div>

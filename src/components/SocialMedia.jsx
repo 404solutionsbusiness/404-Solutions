@@ -20,8 +20,8 @@ export default function SocialMedia({ onOpenContact }) {
           {...revealProps}
           className="relative flex min-h-102.5 flex-col items-stretch overflow-visible
                      rounded-block border border-hairline-strong bg-card-white px-5 pt-6.25
-                     shadow-panel sm:grid sm:min-h-63.75 sm:grid-cols-[0.82fr_1.18fr]
-                     sm:items-center sm:rounded-block sm:px-6 sm:py-7 lg:min-h-67.5
+                     shadow-panel sm:rounded-block sm:px-6 sm:py-7 md:grid md:min-h-63.75
+                     md:grid-cols-[0.82fr_1.18fr] md:items-center lg:min-h-67.5
                      xl:min-h-71.25 xl:grid-cols-[0.78fr_1.22fr] xl:rounded-md xl:px-7.5 xl:py-8"
         >
           <div className="relative z-5 w-full">
@@ -58,9 +58,11 @@ export default function SocialMedia({ onOpenContact }) {
 
           {/* Artwork intentionally overflows the card */}
           <div
-            className="pointer-events-none absolute -right-4.5 -bottom-12 z-3 flex
-                       w-[120%] items-center justify-end sm:top-[-28px] sm:right-[-25px]
-                       sm:bottom-auto sm:w-17/25 lg:top-[-38px] xl:top-[-62px] xl:-right-10 xl:w-7/10"
+            className="pointer-events-none absolute -right-4.5 bottom-0 z-3 flex
+                       w-[120%] items-center justify-end md:top-1/2 md:right-[-20px]
+                       md:bottom-auto md:w-[64%] md:-translate-y-1/2 lg:top-[-38px]
+                       lg:right-[-25px] lg:w-17/25 lg:translate-y-0 xl:top-[-62px]
+                       xl:-right-10 xl:w-7/10"
           >
             <img
               src={socialMediaImage}

@@ -184,7 +184,14 @@ export default function Navbar({ onOpenContact }) {
                   className="block border-b border-black/5 py-3 text-lg font-bold
                              text-ink no-underline transition-[color,padding-left]
                              duration-200 ease-clay hover:pl-2 hover:text-brand"
-                  onClick={() => { setActive(link.label); setMobileOpen(false); }}
+                  onClick={(e) => {
+                    setActive(link.label);
+                    if (link.label === "Contact" && onOpenContact) {
+                      e.preventDefault();
+                      onOpenContact();
+                    }
+                    setMobileOpen(false);
+                  }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
@@ -195,7 +202,10 @@ export default function Navbar({ onOpenContact }) {
               <motion.a
                 href="#contact"
                 className="btn-primary mt-6 w-full justify-center py-3.75 text-base"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => {
+                  handleTalkClick(e);
+                  setMobileOpen(false);
+                }}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navLinks.length * 0.06 }}
