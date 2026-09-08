@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
-  { label: "Blog", href: "#blog" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -16,12 +16,17 @@ const spySections = navLinks
   .filter((l) => !["Blog", "Contact"].includes(l.label))
   .map((l) => ({ label: l.label, id: l.href.slice(1) }));
 
-export default function Navbar({ onOpenContact }) {
+export default function Navbar({
+  onOpenContact,
+  onOpenBlog,
+  isBlogPage,
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("Home");
+  const [active, setActive] = useState(() => (isBlogPage ? "Blog" : "Home"));
 
   useEffect(() => {
+    if (isBlogPage) return;
     const handleScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 20);
@@ -32,7 +37,7 @@ export default function Navbar({ onOpenContact }) {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isBlogPage]);
 
   /* Highlight the section actually in view rather than the last one clicked. */
   useEffect(() => {
@@ -87,7 +92,7 @@ export default function Navbar({ onOpenContact }) {
       >
         <div className="mx-auto flex max-w-page items-center justify-between px-5 md:px-8 lg:px-12">
           {/* Logo */}
-          <a href="#home" className="group flex items-center no-underline" aria-label="404 Solution Home">
+          <a href={isBlogPage ? "/" : "#home"} className="group flex items-center no-underline" aria-label="404 Solution Home">
             <img
               src="/logo.png"
               alt="404 Solution Logo"
@@ -104,7 +109,13 @@ export default function Navbar({ onOpenContact }) {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={
+                  link.label === "Blog"
+                    ? link.href
+                    : isBlogPage
+                      ? `/${link.href}`
+                      : link.href
+                }
                 className={`relative pb-1.5 text-nav no-underline transition-colors
                             duration-200 ease-clay hover:text-ink ${
                               active === link.label
@@ -113,6 +124,10 @@ export default function Navbar({ onOpenContact }) {
                             }`}
                 onClick={(e) => {
                   setActive(link.label);
+                  if (link.label === "Blog" && onOpenBlog) {
+                    e.preventDefault();
+                    onOpenBlog();
+                  }
                   if (link.label === "Contact" && onOpenContact) {
                     e.preventDefault();
                     onOpenContact();
@@ -180,12 +195,22 @@ export default function Navbar({ onOpenContact }) {
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.label}
-                  href={link.href}
+                  href={
+                    link.label === "Blog"
+                      ? link.href
+                      : isBlogPage
+                        ? `/${link.href}`
+                        : link.href
+                  }
                   className="block border-b border-black/5 py-3 text-lg font-bold
                              text-ink no-underline transition-[color,padding-left]
                              duration-200 ease-clay hover:pl-2 hover:text-brand"
                   onClick={(e) => {
                     setActive(link.label);
+                    if (link.label === "Blog" && onOpenBlog) {
+                      e.preventDefault();
+                      onOpenBlog();
+                    }
                     if (link.label === "Contact" && onOpenContact) {
                       e.preventDefault();
                       onOpenContact();

@@ -1,6 +1,9 @@
 ﻿import { useState } from "react";
+import { useEffect } from "react";
 import { AnimatePresence, MotionConfig } from "framer-motion";
 import Navbar from "./components/Navbar";
+import Blog from "./components/Blog";
+import BlogArticle from "./components/BlogArticle";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Approach from "./components/Approach";
@@ -13,6 +16,23 @@ import Footer from "./components/Footer";
 
 export default function App() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [path, setPath] = useState(() => window.location.pathname);
+
+  useEffect(() => {
+    const handlePopState = () => setPath(window.location.pathname);
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const navigate = (nextPath) => {
+    window.history.pushState({}, "", nextPath);
+    setPath(nextPath);
+    window.scrollTo(0, 0);
+  };
+
+  const isBlogPage = path.replace(/\/$/, "") === "/blog";
+  const isBlogArticlePage = path.replace(/\/$/, "") === "/blog/website-conversion";
+  const isBlogRoute = isBlogPage || isBlogArticlePage;
 
   return (
     /* reducedMotion="user" makes every Framer animation honour the OS setting */
@@ -25,17 +45,40 @@ export default function App() {
       >
         Skip to main content
       </a>
-      <Navbar onOpenContact={() => setContactOpen(true)} />
-      <main id="main-content">
-        <Hero onOpenContact={() => setContactOpen(true)} />
-        <Services onOpenContact={() => setContactOpen(true)} />
-        <Approach />
-        <Work onOpenContact={() => setContactOpen(true)} />
-        <SocialMedia onOpenContact={() => setContactOpen(true)} />
-        <WhyChooseUs />
-        <CTA onOpenContact={() => setContactOpen(true)} />
-      </main>
-      <Footer onOpenContact={() => setContactOpen(true)} />
+      <Navbar
+        key={isBlogRoute ? "blog" : "home"}
+        onOpenContact={() => setContactOpen(true)}
+        onOpenBlog={() => navigate("/blog")}
+        isBlogPage={isBlogRoute}
+      />
+      {isBlogPage ? (
+        <main id="main-content">
+          <Blog
+            onOpenContact={() => setContactOpen(true)}
+            onOpenArticle={() => navigate("/blog/website-conversion")}
+          />
+        </main>
+      ) : isBlogArticlePage ? (
+        <main id="main-content">
+          <BlogArticle
+            onOpenContact={() => setContactOpen(true)}
+            onNavigate={navigate}
+          />
+        </main>
+      ) : (
+        <>
+          <main id="main-content">
+            <Hero onOpenContact={() => setContactOpen(true)} />
+            <Services onOpenContact={() => setContactOpen(true)} />
+            <Approach />
+            <Work onOpenContact={() => setContactOpen(true)} />
+            <SocialMedia onOpenContact={() => setContactOpen(true)} />
+            <WhyChooseUs />
+            <CTA onOpenContact={() => setContactOpen(true)} />
+          </main>
+          <Footer onOpenContact={() => setContactOpen(true)} />
+        </>
+      )}
 
       {/* Interactive Contact Modal connected to Google Forms */}
       <AnimatePresence>
