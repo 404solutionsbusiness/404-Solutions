@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { AnimatePresence, MotionConfig } from "framer-motion";
 import Navbar from "./components/Navbar";
@@ -67,6 +67,7 @@ export default function App() {
           <Blog
             onOpenContact={() => setContactOpen(true)}
             onOpenArticle={() => navigate("/blog/website-mistakes")}
+            onOpenFeaturedArticle={() => navigate("/blog/website-conversion")}
             onOpenUiUxArticle={() => navigate("/blog/ui-ux-design")}
             onOpenSocialMediaArticle={() => navigate("/blog/social-media-growth")}
             onOpenSeoArticle={() => navigate("/blog/seo-basics")}

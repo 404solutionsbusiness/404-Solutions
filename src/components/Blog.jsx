@@ -231,7 +231,7 @@ function FeaturedIllustration() {
   );
 }
 
-export default function Blog({ onOpenContact, onOpenArticle, onOpenUiUxArticle, onOpenSocialMediaArticle, onOpenSeoArticle, onOpenMobileFirstArticle, onOpenEcommerceArticle }) {
+export default function Blog({ onOpenContact, onOpenArticle, onOpenFeaturedArticle, onOpenUiUxArticle, onOpenSocialMediaArticle, onOpenSeoArticle, onOpenMobileFirstArticle, onOpenEcommerceArticle }) {
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -455,7 +455,7 @@ export default function Blog({ onOpenContact, onOpenArticle, onOpenUiUxArticle, 
                 </span>
               </div>
 
-              <button className="blog-read-btn" onClick={onOpenArticle}>
+              <button className="blog-read-btn" onClick={onOpenFeaturedArticle}>
                 Read Article
                 <ArrowRight size={17} />
               </button>
