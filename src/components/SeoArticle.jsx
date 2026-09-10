@@ -32,7 +32,7 @@ export default function SeoArticle({onOpenContact,onNavigate}){
     <section id="technical"><div className="seo-heading"><i>6</i><h2>Technical SEO (Made Simple)</h2></div><p>Ensure your website is mobile-friendly, loads fast, has a secure HTTPS connection, and an XML sitemap.</p></section>
     <section id="tracking"><div className="seo-heading"><i>7</i><h2>Tracking Your Results</h2></div><p>Use Google Analytics and Google Search Console to track your traffic, keyword rankings, and overall performance.</p></section>
     <section id="final-thoughts" className="seo-final"><div className="seo-final-heading"><h2>Final Thoughts</h2></div><p>SEO is a continuous process, not a one-time task. Start with the basics, stay consistent, and keep improving. Over time, your SEO results will grow.</p></section>
-    <section className="seo-bottom-cta"><img src={rocketImage} alt="SEO growth rocket"/><div><h2>Ready to Grow Your Business<br/>with SEO?</h2><p>Let’s create a strategy that brings real results.</p></div><button type="button" onClick={onOpenContact}>Get a Free Consultation <ArrowRight size={15}/></button></section>
+    <section className="seo-bottom-cta"><img src={rocketImage} alt="SEO growth rocket"/><div><h2>Ready to Grow Your Business with SEO?</h2><p>Let’s create a strategy that brings real results.</p></div><button type="button" onClick={onOpenContact}>Get a Free Consultation <ArrowRight size={15}/></button></section>
    </article>
   </main><aside className="seo-sidebar">
    <div className="seo-card seo-toc"><h2>Table of Contents</h2><ol>{toc.map(([id,title],i)=><li className={i===0?"active":""} key={id}><a href={`#${id}`}>{i+1}. &nbsp;{title}</a></li>)}</ol></div>

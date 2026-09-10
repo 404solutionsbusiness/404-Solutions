@@ -7,7 +7,6 @@
   min-height: 100vh;
   background: var(--bg);
   color: var(--text-dark);
-  overflow: hidden;
 }
 
 .blog-page .container {
@@ -2066,7 +2065,7 @@
     height: 270px;
     transform: scale(0.88);
     transform-origin: center;
-    margin: -15px -25px -15px;
+    margin: -15px 0;
   }
 
   .blog-category {
@@ -2143,7 +2142,7 @@
 
   .blog-hero__visual {
     transform: scale(0.78);
-    margin: -25px -45px -25px;
+    margin: -25px 0;
   }
 
   .blog-featured-content h2 {

@@ -143,6 +143,177 @@
   font-weight: 700;
 }
 
+/* Keep text and card children shrinkable on the narrowest supported screens. */
+.blog-page .container,
+.blog-article-container,
+.uiux-container,
+.social-container,
+.seo-container,
+.mobile-container,
+.ecom-container,
+.blog-featured-content,
+.blog-post-card__body,
+.newsletter-copy,
+.newsletter-actions,
+.blog-post-card h3,
+.blog-post-meta,
+.blog-search,
+.newsletter-form,
+.article-section-heading h2,
+.uiux-heading h2,
+.social-heading h2,
+.seo-heading h2,
+.mobile-heading h2,
+.ecom-heading h2 {
+  min-width: 0;
+}
+
+.article-related-list > a > span,
+.uiux-related > div > a > span,
+.social-related > div > a > span,
+.seo-related > div > a > span,
+.mobile-related > div > a > span,
+.ecom-related > div > a > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .blog-page h1,
+  .blog-page h2,
+  .blog-page h3,
+  .blog-article-page h1,
+  .blog-article-page h2,
+  .blog-article-page h3,
+  .uiux-page h1,
+  .uiux-page h2,
+  .uiux-page h3,
+  .social-page h1,
+  .social-page h2,
+  .social-page h3,
+  .seo-page h1,
+  .seo-page h2,
+  .seo-page h3,
+  .mobile-page h1,
+  .mobile-page h2,
+  .mobile-page h3,
+  .ecom-page h1,
+  .ecom-page h2,
+  .ecom-page h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .blog-post-meta {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .blog-search input,
+  .newsletter-form input {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .article-tip,
+  .uiux-quote,
+  .social-tip,
+  .social-quote,
+  .seo-tip,
+  .seo-quote,
+  .mobile-tip,
+  .mobile-quote,
+  .ecom-tip,
+  .ecom-quote {
+    min-width: 0;
+  }
+
+  .article-tip > span,
+  .uiux-quote > b,
+  .social-tip > span,
+  .social-quote > b,
+  .seo-tip > span,
+  .seo-quote > b,
+  .mobile-tip > span,
+  .mobile-quote > b,
+  .ecom-tip > span,
+  .ecom-quote > b {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .article-bottom-cta,
+  .uiux-bottom-cta,
+  .social-bottom-cta,
+  .seo-bottom-cta,
+  .mobile-bottom-cta,
+  .ecom-bottom-cta {
+    display: grid;
+    grid-template-columns: minmax(78px, 90px) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 8px;
+    min-width: 0;
+    min-height: 128px;
+    padding: 12px 10px 12px 0;
+  }
+
+  .article-bottom-cta img,
+  .uiux-bottom-cta img,
+  .social-bottom-cta img,
+  .seo-bottom-cta img,
+  .mobile-bottom-cta img,
+  .ecom-bottom-cta img {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: end;
+    width: 90px;
+    height: auto;
+    max-width: 90px;
+    max-height: 112px;
+    min-width: 0;
+    object-fit: contain;
+    object-position: bottom;
+    transform: translateY(14px);
+  }
+
+  .article-bottom-cta > div,
+  .uiux-bottom-cta > div,
+  .social-bottom-cta > div,
+  .seo-bottom-cta > div,
+  .mobile-bottom-cta > div,
+  .ecom-bottom-cta > div {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .uiux-bottom-cta > button,
+  .social-bottom-cta > button,
+  .seo-bottom-cta > button,
+  .mobile-bottom-cta > button,
+  .ecom-bottom-cta > button {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    max-width: 100%;
+    padding: 9px 12px;
+    white-space: nowrap;
+  }
+
+  .article-bottom-cta > div {
+    grid-row: 1 / -1;
+    align-self: center;
+    padding: 0;
+  }
+
+  .article-bottom-cta > div button {
+    margin-top: 8px;
+    padding: 9px 12px;
+  }
+}
+
 @media (max-width: 600px) {
   .blog-page h1 {
     font-size: 38px;
