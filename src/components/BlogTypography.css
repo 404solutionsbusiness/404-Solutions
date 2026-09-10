@@ -1,0 +1,168 @@
+/* Shared typography polish for the blog listing and every article template. */
+.blog-page,
+.blog-article-page,
+.uiux-page,
+.social-page,
+.seo-page,
+.mobile-page,
+.ecom-page {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.blog-page h1,
+.blog-article-page h1,
+.uiux-page h1,
+.social-page h1,
+.seo-page h1,
+.mobile-page h1,
+.ecom-page h1 {
+  font-weight: 700;
+}
+
+.blog-article-page h1,
+.uiux-page h1,
+.social-page h1,
+.seo-page h1,
+.mobile-page h1,
+.ecom-page h1 {
+  font-size: clamp(40px, 4.2vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.blog-page h1 {
+  font-size: clamp(48px, 4.5vw, 56px);
+  font-weight: 700;
+}
+
+.blog-page h2,
+.blog-page h3,
+.blog-article-page h2,
+.uiux-page h2,
+.social-page h2,
+.seo-page h2,
+.mobile-page h2,
+.ecom-page h2 {
+  font-weight: 700;
+}
+
+.blog-article-content section > p,
+.uiux-content section > p,
+.social-content section > p,
+.seo-content section > p,
+.mobile-content section > p,
+.ecom-content section > p {
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.article-tip,
+.uiux-tip,
+.social-tip,
+.social-quote,
+.seo-tip,
+.seo-quote,
+.mobile-tip,
+.mobile-quote,
+.ecom-tip,
+.ecom-quote {
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.article-tip strong,
+.uiux-tip b,
+.social-tip b,
+.seo-tip b,
+.mobile-tip b,
+.ecom-tip b {
+  font-weight: 600;
+}
+
+.article-toc h2,
+.uiux-card h2,
+.social-card h2,
+.seo-card h2,
+.mobile-card h2,
+.ecom-card h2 {
+  font-weight: 700;
+}
+
+.article-toc li,
+.uiux-toc li,
+.social-toc li,
+.seo-toc li,
+.mobile-toc li,
+.ecom-toc li {
+  font-weight: 400;
+}
+
+.article-related-list b,
+.uiux-related b,
+.social-related b,
+.seo-related b,
+.mobile-related b,
+.ecom-related b,
+.article-view-all,
+.uiux-view-all,
+.social-view-all,
+.seo-view-all,
+.mobile-view-all,
+.ecom-view-all {
+  font-weight: 700;
+}
+
+/* The article row is the hit target, while keeping the existing card visuals. */
+.article-related-list > a,
+.uiux-related > div > a,
+.social-related > div > a,
+.seo-related > div > a,
+.mobile-related > div > a,
+.ecom-related > div > a {
+  width: 100%;
+  cursor: pointer;
+}
+
+.article-final-thoughts h2,
+.uiux-final h2,
+.social-final h2,
+.seo-final h2,
+.mobile-final h2,
+.ecom-final h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.article-bottom-cta h2,
+.uiux-bottom-cta h2,
+.social-bottom-cta h2,
+.seo-bottom-cta h2,
+.mobile-bottom-cta h2,
+.ecom-bottom-cta h2 {
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .blog-page h1 {
+    font-size: 38px;
+  }
+
+  .blog-article-page h1,
+  .uiux-page h1,
+  .social-page h1,
+  .seo-page h1,
+  .mobile-page h1,
+  .ecom-page h1 {
+    font-size: 34px;
+  }
+
+  .article-final-thoughts h2,
+  .uiux-final h2,
+  .social-final h2,
+  .seo-final h2,
+  .mobile-final h2,
+  .ecom-final h2 {
+    font-size: 20px;
+  }
+}

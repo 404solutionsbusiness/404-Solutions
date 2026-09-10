@@ -3,15 +3,15 @@ import { useState } from "react";
 import "./Blog.css";
 import Footer from "./Footer";
 
-const blogImages = import.meta.glob("../assets/blogs/*.png", {
+const blogImages = import.meta.glob("../assets/blogs/*.webp", {
   eager: true,
   import: "default",
 });
 
 const getBlogImage = (filename) => blogImages[`../assets/blogs/${filename}`];
 
-const heroImage = getBlogImage("blog-hero.png");
-const featuredImage = getBlogImage("featured-website.png");
+const heroImage = getBlogImage("blog-hero.webp");
+const featuredImage = getBlogImage("featured-website.webp");
 
 const posts = [
   {
@@ -23,7 +23,7 @@ const posts = [
     readTime: "4 min read",
     date: "Sep 5, 2026",
     type: "mistakes",
-    image: getBlogImage("website-mistakes.png"),
+    image: getBlogImage("website-mistakes.webp"),
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const posts = [
     readTime: "5 min read",
     date: "Sep 4, 2026",
     type: "design",
-    image: getBlogImage("uiux-designs.png"),
+    image: getBlogImage("uiux-designs.webp"),
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const posts = [
     readTime: "6 min read",
     date: "Sep 3, 2026",
     type: "social",
-    image: getBlogImage("socialmedia.png"),
+    image: getBlogImage("socialmedia.webp"),
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ const posts = [
     readTime: "5 min read",
     date: "Sep 2, 2026",
     type: "ecommerce",
-    image: getBlogImage("ecommblog.png"),
+    image: getBlogImage("ecommblog.webp"),
   },
   {
     id: 5,
@@ -67,7 +67,7 @@ const posts = [
     readTime: "4 min read",
     date: "Sep 1, 2026",
     type: "mobile",
-    image: getBlogImage("mobiledesign.png"),
+    image: getBlogImage("mobiledesign.webp"),
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const posts = [
     readTime: "6 min read",
     date: "Aug 30, 2026",
     type: "seo",
-    image: getBlogImage("seo-basics.png"),
+    image: getBlogImage("seo-basics.webp"),
   },
 ];
 
@@ -89,7 +89,6 @@ const categories = [
   "Social Media",
   "Digital Growth",
   "Business",
-  "Tips & Guides",
 ];
 
 const POSTS_PER_PAGE = 6;
@@ -232,7 +231,7 @@ function FeaturedIllustration() {
   );
 }
 
-export default function Blog({ onOpenContact, onOpenArticle }) {
+export default function Blog({ onOpenContact, onOpenArticle, onOpenUiUxArticle, onOpenSocialMediaArticle, onOpenSeoArticle, onOpenMobileFirstArticle, onOpenEcommerceArticle }) {
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -488,7 +487,11 @@ export default function Blog({ onOpenContact, onOpenArticle }) {
                     <span>{post.readTime}</span>
                   </div>
 
-                  <button className="blog-post-link">
+                  <button
+                    type="button"
+                    className="blog-post-link"
+                    onClick={post.title === "5 Website Mistakes That Make Your Business Look Unprofessional" ? onOpenArticle : post.title === "UI/UX Design: Why Good Design Is More Than Just Pretty" ? onOpenUiUxArticle : post.title === "How Social Media Can Actually Grow Your Business" ? onOpenSocialMediaArticle : post.title === "SEO Basics Every Small Business Should Know" ? onOpenSeoArticle : post.title === "Mobile-First Design: Why Your Website Must Work on Every Screen" ? onOpenMobileFirstArticle : post.title === "E-Commerce Website: What Your Store Needs to Convert" ? onOpenEcommerceArticle : undefined}
+                  >
                     Read Article
                     <ArrowRight size={16} />
                   </button>

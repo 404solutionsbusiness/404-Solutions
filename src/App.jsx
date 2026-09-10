@@ -4,6 +4,11 @@ import { AnimatePresence, MotionConfig } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Blog from "./components/Blog";
 import BlogArticle from "./components/BlogArticle";
+import UiUxArticle from "./components/UiUxArticle";
+import SocialMediaArticle from "./components/SocialMediaArticle";
+import SeoArticle from "./components/SeoArticle";
+import MobileFirstArticle from "./components/MobileFirstArticle";
+import EcommerceArticle from "./components/EcommerceArticle";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Approach from "./components/Approach";
@@ -31,8 +36,14 @@ export default function App() {
   };
 
   const isBlogPage = path.replace(/\/$/, "") === "/blog";
-  const isBlogArticlePage = path.replace(/\/$/, "") === "/blog/website-conversion";
-  const isBlogRoute = isBlogPage || isBlogArticlePage;
+  const normalizedPath = path.replace(/\/$/, "");
+  const isUiUxArticlePage = normalizedPath === "/blog/ui-ux-design";
+  const isSocialMediaArticlePage = normalizedPath === "/blog/social-media-growth";
+  const isSeoArticlePage = normalizedPath === "/blog/seo-basics";
+  const isMobileFirstArticlePage = normalizedPath === "/blog/mobile-first-design";
+  const isEcommerceArticlePage = normalizedPath === "/blog/ecommerce-website";
+  const isBlogArticlePage = ["/blog/website-conversion", "/blog/website-mistakes"].includes(normalizedPath);
+  const isBlogRoute = isBlogPage || isBlogArticlePage || isUiUxArticlePage || isSocialMediaArticlePage || isSeoArticlePage || isMobileFirstArticlePage || isEcommerceArticlePage;
 
   return (
     /* reducedMotion="user" makes every Framer animation honour the OS setting */
@@ -55,7 +66,47 @@ export default function App() {
         <main id="main-content">
           <Blog
             onOpenContact={() => setContactOpen(true)}
-            onOpenArticle={() => navigate("/blog/website-conversion")}
+            onOpenArticle={() => navigate("/blog/website-mistakes")}
+            onOpenUiUxArticle={() => navigate("/blog/ui-ux-design")}
+            onOpenSocialMediaArticle={() => navigate("/blog/social-media-growth")}
+            onOpenSeoArticle={() => navigate("/blog/seo-basics")}
+            onOpenMobileFirstArticle={() => navigate("/blog/mobile-first-design")}
+            onOpenEcommerceArticle={() => navigate("/blog/ecommerce-website")}
+          />
+        </main>
+      ) : isEcommerceArticlePage ? (
+        <main id="main-content">
+          <EcommerceArticle
+            onOpenContact={() => setContactOpen(true)}
+            onNavigate={navigate}
+          />
+        </main>
+      ) : isMobileFirstArticlePage ? (
+        <main id="main-content">
+          <MobileFirstArticle
+            onOpenContact={() => setContactOpen(true)}
+            onNavigate={navigate}
+          />
+        </main>
+      ) : isSeoArticlePage ? (
+        <main id="main-content">
+          <SeoArticle
+            onOpenContact={() => setContactOpen(true)}
+            onNavigate={navigate}
+          />
+        </main>
+      ) : isSocialMediaArticlePage ? (
+        <main id="main-content">
+          <SocialMediaArticle
+            onOpenContact={() => setContactOpen(true)}
+            onNavigate={navigate}
+          />
+        </main>
+      ) : isUiUxArticlePage ? (
+        <main id="main-content">
+          <UiUxArticle
+            onOpenContact={() => setContactOpen(true)}
+            onNavigate={navigate}
           />
         </main>
       ) : isBlogArticlePage ? (
@@ -63,6 +114,7 @@ export default function App() {
           <BlogArticle
             onOpenContact={() => setContactOpen(true)}
             onNavigate={navigate}
+            isWebsiteConversion={normalizedPath === "/blog/website-conversion"}
           />
         </main>
       ) : (
