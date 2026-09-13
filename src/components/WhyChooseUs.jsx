@@ -34,7 +34,8 @@ const reasons = [
   {
     id: "mobile",
     title: "Mobile First",
-    description: "We build responsive experiences that look perfect everywhere.",
+    description:
+      "We build responsive experiences that look perfect everywhere.",
     image: tabletImage,
     width: 1704,
     height: 923,
@@ -55,10 +56,16 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why" aria-labelledby="why-heading" className="relative pt-8 pb-13.75 sm:pt-10.5 sm:pb-18">
+    <section
+      id="why"
+      aria-labelledby="why-heading"
+      className="relative pt-8 pb-13.75 sm:pt-10.5 sm:pb-18"
+    >
       <div className="mx-auto w-full max-w-page px-5 md:px-8 lg:px-12">
-
-        <h2 id="why-heading" className="mb-4 block text-eyebrow uppercase text-brand sm:mb-4.5">
+        <h2
+          id="why-heading"
+          className="mb-4 block text-eyebrow uppercase text-brand sm:mb-4.5"
+        >
           Why Choose 404 Solution?
         </h2>
 
@@ -108,7 +115,6 @@ export default function WhyChooseUs() {
             </motion.article>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

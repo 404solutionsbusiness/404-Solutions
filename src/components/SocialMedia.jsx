@@ -13,7 +13,10 @@ export default function SocialMedia({ onOpenContact }) {
 
   return (
     /* overflow stays visible everywhere: the artwork deliberately escapes the card */
-    <section id="social-media" className="w-full overflow-visible pt-4.5 pb-11.25 sm:pt-6 lg:pt-7 lg:pb-13.75 xl:pt-8 xl:pb-15.5">
+    <section
+      id="social-media"
+      className="w-full overflow-visible pt-4.5 pb-11.25 sm:pt-6 lg:pt-7 lg:pb-13.75 xl:pt-8 xl:pb-15.5"
+    >
       <div className="mx-auto w-full max-w-page px-5 md:px-8 lg:px-12">
         <motion.div
           variants={rise}

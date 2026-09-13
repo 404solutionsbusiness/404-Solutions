@@ -107,7 +107,11 @@ export default function CTA({ onOpenContact }) {
             aria-pressed={isGreeting}
             onClick={playGreeting}
             onKeyDown={handleRobotKeyDown}
-            animate={isGreeting ? { y: [0, -3, 0], scale: [1, 1.015, 1] } : { y: 0, scale: 1 }}
+            animate={
+              isGreeting
+                ? { y: [0, -3, 0], scale: [1, 1.015, 1] }
+                : { y: 0, scale: 1 }
+            }
             transition={{ duration: 0.38, ease: "easeOut" }}
             className="group pointer-events-auto absolute right-0 bottom-0 z-100 block h-60 cursor-pointer
                        w-51.25 overflow-visible sm:right-1.25 sm:h-66.25 sm:w-56.25

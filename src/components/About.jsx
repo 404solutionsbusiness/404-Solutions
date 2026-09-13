@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import {
   Activity,
   ArrowRight,
@@ -37,11 +37,26 @@ const reveal = {
   transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
 };
 const approachIcons = [Search, FileText, Code2, BarChart3];
-const approachDescriptionLines = { "01": ["Understand your business,", "audience and goals."], "02": ["Turn insights into a clear strategy", "and direction."], "03": ["Design and develop an experience", "that works."], "04": ["Improve, optimize and help", "your business move forward."] };
+const approachDescriptionLines = {
+  "01": ["Understand your business,", "audience and goals."],
+  "02": ["Turn insights into a clear strategy", "and direction."],
+  "03": ["Design and develop an experience", "that works."],
+  "04": ["Improve, optimize and help", "your business move forward."],
+};
 const whyIcons = { Heart, Target, TrendingUp, Handshake };
-const whyTitleLines = { "client-first": ["Client", "First"], "strategic-thinking": ["Strategic", "Thinking"], "result-oriented": ["Result-", "Oriented"], partnership: ["Long-Term", "Partnership"] };
+const whyTitleLines = {
+  "client-first": ["Client", "First"],
+  "strategic-thinking": ["Strategic", "Thinking"],
+  "result-oriented": ["Result-", "Oriented"],
+  partnership: ["Long-Term", "Partnership"],
+};
 const successIcons = { Users, Activity, Award, ShieldCheck };
-const successTitleLines = { leads: ["More", "Leads"], engagement: ["Higher", "Engagement"], brand: ["Stronger Brand", "Presence"], growth: ["Sustainable", "Growth"] };
+const successTitleLines = {
+  leads: ["More", "Leads"],
+  engagement: ["Higher", "Engagement"],
+  brand: ["Stronger Brand", "Presence"],
+  growth: ["Sustainable", "Growth"],
+};
 const teamAssets = import.meta.glob("../assets/about/team/*", {
   eager: true,
   query: "?url",
@@ -76,8 +91,55 @@ function Title({ label, title, copy, center = false }) {
   );
 }
 function AboutCompactCTA({ onOpenContact }) {
-  const handleClick = (e) => { e.preventDefault(); onOpenContact?.(); };
-    return <section className="py-5 lg:py-7"><div className={shell}><div className="relative flex min-h-[360px] flex-col items-start gap-4 overflow-hidden rounded-2xl bg-cta-gradient px-5 py-5 text-white shadow-cta sm:min-h-[300px] sm:px-7 sm:py-6 md:min-h-[220px] md:grid md:grid-cols-[150px_minmax(0,1fr)_auto] md:items-center md:gap-4 md:px-6 md:py-4 lg:min-h-[92px] lg:grid-cols-[280px_minmax(0,1fr)_auto_150px] lg:gap-6 lg:px-9"><div className="relative z-20 flex h-10 w-fit shrink-0 items-center md:h-12 md:w-[150px] lg:w-[280px]"><img src="/logo.png" alt="404 Solutions" className="h-9 w-auto brightness-0 invert sm:h-11"/></div><div className="pointer-events-none absolute bottom-0 left-auto right-4 z-10 h-24 w-24 translate-y-2 sm:right-8 sm:h-28 sm:w-28 md:left-16 md:right-auto md:h-28 md:w-28 lg:left-28 lg:h-32 lg:w-32 lg:translate-y-3"><img src={aboutRocketImg} alt="" className="h-full w-auto object-contain object-bottom"/></div><div className="relative z-10 min-w-0 w-full max-w-[275px] px-0 md:w-auto md:max-w-none md:px-0 lg:flex-1 lg:px-9"><h2 className="text-xl font-black leading-tight sm:text-xl md:text-lg lg:text-xl">Ready to Build<br/>Something Better?</h2><p className="mt-2 max-w-xl text-sm leading-snug text-white/80 sm:text-xs lg:text-sm">Let’s create a digital experience that looks great, works beautifully, and helps your business grow.</p></div><a href="#contact" onClick={handleClick} className="relative z-20 inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-xs font-bold md:px-4 md:text-[10px] text-white no-underline sm:px-5">Get a Free Consultation <ArrowRight size={13}/></a><div className="hidden shrink-0 -rotate-6 md:hidden lg:block text-center text-sm font-semibold italic leading-none sm:block sm:text-lg lg:text-2xl"><span className="block">Better</span><span className="block">Businesses</span><span className="block">Ahead.</span></div></div></div></section>;
+  const handleClick = (e) => {
+    e.preventDefault();
+    onOpenContact?.();
+  };
+  return (
+    <section className="py-5 lg:py-7">
+      <div className={shell}>
+        <div className="relative flex min-h-[360px] flex-col items-start gap-4 overflow-hidden rounded-2xl bg-cta-gradient px-5 py-5 text-white shadow-cta sm:min-h-[300px] sm:px-7 sm:py-6 md:min-h-[220px] md:grid md:grid-cols-[150px_minmax(0,1fr)_auto] md:items-center md:gap-4 md:px-6 md:py-4 lg:min-h-[92px] lg:grid-cols-[280px_minmax(0,1fr)_auto_150px] lg:gap-6 lg:px-9">
+          <div className="relative z-20 flex h-10 w-fit shrink-0 items-center md:h-12 md:w-[150px] lg:w-[280px]">
+            <img
+              src="/logo.png"
+              alt="404 Solutions"
+              className="h-9 w-auto brightness-0 invert sm:h-11"
+            />
+          </div>
+          <div className="pointer-events-none absolute bottom-0 left-auto right-4 z-10 h-24 w-24 translate-y-2 sm:right-8 sm:h-28 sm:w-28 md:left-16 md:right-auto md:h-28 md:w-28 lg:left-28 lg:h-32 lg:w-32 lg:translate-y-3">
+            <img
+              src={aboutRocketImg}
+              alt=""
+              className="h-full w-auto object-contain object-bottom"
+            />
+          </div>
+          <div className="relative z-10 min-w-0 w-full max-w-[275px] px-0 md:w-auto md:max-w-none md:px-0 lg:flex-1 lg:px-9">
+            <h2 className="text-xl font-black leading-tight sm:text-xl md:text-lg lg:text-xl">
+              Ready to Build
+              <br />
+              Something Better?
+            </h2>
+            <p className="mt-2 max-w-xl text-sm leading-snug text-white/80 sm:text-xs lg:text-sm">
+              Let’s create a digital experience that looks great, works
+              beautifully, and helps your business grow.
+            </p>
+          </div>
+          <a
+            href="#contact"
+            onClick={handleClick}
+            className="relative z-20 inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-xs font-bold md:px-4 md:text-[10px] text-white no-underline sm:px-5"
+          >
+            Get a Free Consultation <ArrowRight size={13} />
+          </a>
+          <div className="hidden shrink-0 -rotate-6 md:hidden lg:block text-center text-sm font-semibold italic leading-none sm:block sm:text-lg lg:text-2xl">
+            <span className="block">Better</span>
+            <span className="block">Businesses</span>
+            <span className="block">Ahead.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 export default function About({ onOpenContact, onNavigate }) {
   const talk = (e) => {
@@ -231,13 +293,23 @@ export default function About({ onOpenContact, onNavigate }) {
                     <br />A Clear Path.
                   </>
                 }
-                copy={<>From your first idea to long-term growth, we keep things simple,<br/>strategic, and focused on results.</>}
+                copy={
+                  <>
+                    From your first idea to long-term growth, we keep things
+                    simple,
+                    <br />
+                    strategic, and focused on results.
+                  </>
+                }
               />
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
                 {ourApproachSteps.map((s, i) => {
                   const Icon = approachIcons[i];
                   return (
-                    <div key={s.number} className="transition-transform duration-300 ease-out hover:scale-105">
+                    <div
+                      key={s.number}
+                      className="transition-transform duration-300 ease-out hover:scale-105"
+                    >
                       <div className="flex items-center gap-4">
                         <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-pale text-lg font-black text-brand">
                           {s.number}
@@ -246,7 +318,13 @@ export default function About({ onOpenContact, onNavigate }) {
                       </div>
                       <div className="mt-3">
                         <h3 className="font-extrabold">{s.title}</h3>
-                        <p className="mt-1 text-xs leading-relaxed text-ink-soft">{approachDescriptionLines[s.number].map((line) => <span className="block" key={line}>{line}</span>)}</p>
+                        <p className="mt-1 text-xs leading-relaxed text-ink-soft">
+                          {approachDescriptionLines[s.number].map((line) => (
+                            <span className="block" key={line}>
+                              {line}
+                            </span>
+                          ))}
+                        </p>
                       </div>
                     </div>
                   );
@@ -270,7 +348,14 @@ export default function About({ onOpenContact, onNavigate }) {
                       Driven by Impact.
                     </>
                   }
-                  copy={<>We don’t just build websites. We build digital experiences designed to<br/>help real businesses grow.</>}
+                  copy={
+                    <>
+                      We don’t just build websites. We build digital experiences
+                      designed to
+                      <br />
+                      help real businesses grow.
+                    </>
+                  }
                 />
                 <a
                   href="#our-values"
@@ -283,11 +368,20 @@ export default function About({ onOpenContact, onNavigate }) {
                 {whyChoose404.map((v) => {
                   const Icon = whyIcons[v.icon];
                   return (
-                    <div key={v.id} className="relative rounded-2xl bg-white/75 p-5 transition-all duration-300 ease-out hover:z-10 hover:scale-105 hover:bg-white hover:shadow-clay-card">
+                    <div
+                      key={v.id}
+                      className="relative rounded-2xl bg-white/75 p-5 transition-all duration-300 ease-out hover:z-10 hover:scale-105 hover:bg-white hover:shadow-clay-card"
+                    >
                       <div className="flex size-12 items-center justify-center rounded-xl bg-brand-pale text-brand">
                         <Icon size={25} strokeWidth={2.2} />
                       </div>
-                      <h3 className="mt-4 font-extrabold">{whyTitleLines[v.id].map((line) => <span className="block" key={line}>{line}</span>)}</h3>
+                      <h3 className="mt-4 font-extrabold">
+                        {whyTitleLines[v.id].map((line) => (
+                          <span className="block" key={line}>
+                            {line}
+                          </span>
+                        ))}
+                      </h3>
                       <p className="mt-1 text-xs text-ink-soft">
                         {v.description}
                       </p>
@@ -374,7 +468,13 @@ export default function About({ onOpenContact, onNavigate }) {
                       <div className="flex size-12 items-center justify-center rounded-xl bg-brand-pale text-brand">
                         <Icon size={25} strokeWidth={2.2} />
                       </div>
-                      <h3 className="mt-4 font-extrabold">{successTitleLines[m.id].map((line) => <span className="block" key={line}>{line}</span>)}</h3>
+                      <h3 className="mt-4 font-extrabold">
+                        {successTitleLines[m.id].map((line) => (
+                          <span className="block" key={line}>
+                            {line}
+                          </span>
+                        ))}
+                      </h3>
                       <p className="mt-1 text-xs leading-relaxed text-ink-soft">
                         {m.description}
                       </p>
@@ -438,7 +538,9 @@ export default function About({ onOpenContact, onNavigate }) {
                       {s.number}
                     </span>
                     <h3 className="mt-1 text-sm font-extrabold">{s.title}</h3>
-                    <p className="mt-1 text-xs leading-relaxed text-ink-soft">{s.description}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-ink-soft">
+                      {s.description}
+                    </p>
                   </div>
                   {i < 4 && (
                     <div className="absolute left-[22px] top-12 h-8 border-l border-dashed border-brand/30 md:left-[calc(100%+4px)] md:top-5 md:h-0 md:w-[calc(100%-8px)] md:border-l-0 md:border-t" />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useEffect } from "react";
 import { AnimatePresence, MotionConfig } from "framer-motion";
 import Navbar from "./components/Navbar";
@@ -17,6 +17,7 @@ import SocialMedia from "./components/SocialMedia";
 import WhyChooseUs from "./components/WhyChooseUs";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
+import ContactPage from "./components/ContactPage";
 import Footer from "./components/Footer";
 import About from "./components/About";
 
@@ -39,6 +40,7 @@ export default function App() {
   const isBlogPage = path.replace(/\/$/, "") === "/blog";
   const normalizedPath = path.replace(/\/$/, "");
   const isAboutPage = normalizedPath === "/about";
+  const isContactPage = normalizedPath === "/contact";
   const isUiUxArticlePage = normalizedPath === "/blog/ui-ux-design";
   const isSocialMediaArticlePage = normalizedPath === "/blog/social-media-growth";
   const isSeoArticlePage = normalizedPath === "/blog/seo-basics";
@@ -123,6 +125,11 @@ export default function App() {
             isWebsiteConversion={normalizedPath === "/blog/website-conversion"}
           />
         </main>
+      ) : isContactPage ? (
+        <>
+          <main id="main-content"><ContactPage onOpenContact={() => setContactOpen(true)} /></main>
+          <Footer onOpenContact={() => setContactOpen(true)} />
+        </>
       ) : isAboutPage ? (
         <>
           <main id="main-content">
@@ -131,20 +138,20 @@ export default function App() {
               onNavigate={navigate}
             />
           </main>
-          <Footer onOpenContact={() => setContactOpen(true)} />
+          <Footer onOpenContact={() => { if (!isContactPage) setContactOpen(true); }} />
         </>
       ) : (
         <>
           <main id="main-content">
-            <Hero onOpenContact={() => setContactOpen(true)} />
-            <Services onOpenContact={() => setContactOpen(true)} />
+            <Hero onOpenContact={() => { if (!isContactPage) setContactOpen(true); }} />
+            <Services onOpenContact={() => { if (!isContactPage) setContactOpen(true); }} />
             <Approach />
-            <Work onOpenContact={() => setContactOpen(true)} />
-            <SocialMedia onOpenContact={() => setContactOpen(true)} />
+            <Work onOpenContact={() => { if (!isContactPage) setContactOpen(true); }} />
+            <SocialMedia onOpenContact={() => { if (!isContactPage) setContactOpen(true); }} />
             <WhyChooseUs />
-            <CTA onOpenContact={() => setContactOpen(true)} />
+            <CTA onOpenContact={() => { if (!isContactPage) setContactOpen(true); }} />
           </main>
-          <Footer onOpenContact={() => setContactOpen(true)} />
+          <Footer onOpenContact={() => { if (!isContactPage) setContactOpen(true); }} />
         </>
       )}
 

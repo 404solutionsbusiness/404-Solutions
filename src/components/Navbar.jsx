@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function activeNavForPath(pathname) {
@@ -26,8 +26,6 @@ export default function Navbar({
   onOpenContact,
   onOpenBlog,
   onOpenAbout,
-  isBlogPage,
-  isAboutPage,
   pathname,
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -43,7 +41,9 @@ export default function Navbar({
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const handleTalkClick = (e) => {
@@ -58,9 +58,7 @@ export default function Navbar({
       <motion.header
         className={`sticky inset-x-0 top-0 z-100 backdrop-blur-[14px]
                     transition-all duration-300 ease-clay ${
-                      scrolled
-                        ? "bg-bg/96 py-3 shadow-nav"
-                        : "bg-bg/88 py-4"
+                      scrolled ? "bg-bg/96 py-3 shadow-nav" : "bg-bg/88 py-4"
                     }`}
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -68,7 +66,11 @@ export default function Navbar({
       >
         <div className="mx-auto flex max-w-page items-center justify-between px-5 md:px-8 lg:px-12">
           {/* Logo */}
-          <a href={isBlogPage ? "/" : "#home"} className="group flex items-center no-underline" aria-label="404 Solution Home">
+          <a
+            href="/"
+            className="group flex items-center no-underline"
+            aria-label="404 Solution Home"
+          >
             <img
               src="/logo.png"
               alt="404 Solution Logo"
@@ -81,19 +83,14 @@ export default function Navbar({
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-10 lg:flex" aria-label="Main navigation">
+          <nav
+            className="hidden items-center gap-10 lg:flex"
+            aria-label="Main navigation"
+          >
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={
-                  link.label === "Blog"
-                    ? link.href
-                    : link.label === "About"
-                      ? "/about"
-                      : (isBlogPage || isAboutPage)
-                        ? `/${link.href}`
-                        : link.href
-                }
+                href={link.href}
                 className={`relative pb-1.5 text-nav no-underline transition-colors
                             duration-200 ease-clay hover:text-ink ${
                               active === link.label
@@ -108,10 +105,6 @@ export default function Navbar({
                   if (link.label === "About" && onOpenAbout) {
                     e.preventDefault();
                     onOpenAbout();
-                  }
-                  if (link.label === "Contact" && onOpenContact) {
-                    e.preventDefault();
-                    onOpenContact();
                   }
                 }}
               >
@@ -176,15 +169,7 @@ export default function Navbar({
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.label}
-                  href={
-                    link.label === "Blog"
-                      ? link.href
-                      : link.label === "About"
-                        ? "/about"
-                        : (isBlogPage || isAboutPage)
-                          ? `/${link.href}`
-                          : link.href
-                  }
+                  href={link.href}
                   className="block border-b border-black/5 py-3 text-lg font-bold
                              text-ink no-underline transition-[color,padding-left]
                              duration-200 ease-clay hover:pl-2 hover:text-brand"
@@ -196,10 +181,6 @@ export default function Navbar({
                     if (link.label === "About" && onOpenAbout) {
                       e.preventDefault();
                       onOpenAbout();
-                    }
-                    if (link.label === "Contact" && onOpenContact) {
-                      e.preventDefault();
-                      onOpenContact();
                     }
                     setMobileOpen(false);
                   }}

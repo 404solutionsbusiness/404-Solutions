@@ -18,7 +18,10 @@ export default function Hero({ onOpenContact }) {
   };
 
   return (
-    <section id="home" className="relative w-full overflow-hidden bg-bg pt-6 pb-9.5 lg:pt-5.5 lg:pb-6.25">
+    <section
+      id="home"
+      className="relative w-full overflow-hidden bg-bg pt-6 pb-9.5 lg:pt-5.5 lg:pb-6.25"
+    >
       <div
         className="mx-auto flex w-full max-w-page flex-col gap-3 px-5 md:grid
                    md:min-h-[clamp(23.75rem,42vh,35rem)] md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-0
@@ -30,7 +33,6 @@ export default function Hero({ onOpenContact }) {
           {...enterProps}
           className="relative z-5 flex w-full flex-col items-start md:pl-1.25 lg:pl-3"
         >
-
           <motion.div
             variants={riseSm}
             className="mb-3.75 inline-flex h-6 items-center gap-1.5 rounded-full
@@ -42,13 +44,19 @@ export default function Hero({ onOpenContact }) {
             <span>WE BUILD. YOU GROW.</span>
           </motion.div>
 
-          <motion.h1 variants={riseSm} className="max-w-140 font-black text-hero text-ink">
+          <motion.h1
+            variants={riseSm}
+            className="max-w-140 font-black text-hero text-ink"
+          >
             Your Digital Problem.
             <br />
             Our <span className="text-brand">404</span> Solutions.
           </motion.h1>
 
-          <motion.p variants={riseSm} className="mt-4.25 mb-5 font-medium text-hero-body text-ink-soft">
+          <motion.p
+            variants={riseSm}
+            className="mt-4.25 mb-5 font-medium text-hero-body text-ink-soft"
+          >
             We build modern websites, handle your
             <br />
             social media and create digital solutions
@@ -56,7 +64,10 @@ export default function Hero({ onOpenContact }) {
             that drive real results.
           </motion.p>
 
-          <motion.div variants={riseSm} className="mb-5.5 flex items-center gap-2.25">
+          <motion.div
+            variants={riseSm}
+            className="mb-5.5 flex items-center gap-2.25"
+          >
             <a
               href="#contact"
               onClick={openContact}
@@ -121,10 +132,15 @@ export default function Hero({ onOpenContact }) {
         <motion.div
           variants={rise}
           {...enterProps}
-          className="relative mt-0.75 flex w-full items-center justify-center md:mt-0 md:h-full md:min-h-[clamp(23.75rem,42vh,35rem)]">
+          className="relative mt-0.75 flex w-full items-center justify-center md:mt-0 md:h-full md:min-h-[clamp(23.75rem,42vh,35rem)]"
+        >
           {/* Decorative star */}
           <div className="pointer-events-none absolute top-[5%] left-[1%] z-3 size-5.25 text-ink md:top-9.5 md:left-0 md:size-5.75">
-            <svg viewBox="0 0 40 40" aria-hidden="true" className="block size-full">
+            <svg
+              viewBox="0 0 40 40"
+              aria-hidden="true"
+              className="block size-full"
+            >
               <path
                 d="M20 0L23.5 15.5L40 20L23.5 24.5L20 40L16.5 24.5L0 20L16.5 15.5L20 0Z"
                 fill="currentColor"
@@ -134,7 +150,11 @@ export default function Hero({ onOpenContact }) {
 
           {/* Decorative sparkle */}
           <div className="pointer-events-none absolute top-[8%] right-[2%] z-3 size-3.5 text-brand-light md:top-16.75 md:right-1 md:size-3.75">
-            <svg viewBox="0 0 30 30" aria-hidden="true" className="block size-full">
+            <svg
+              viewBox="0 0 30 30"
+              aria-hidden="true"
+              className="block size-full"
+            >
               <path
                 d="M15 0L17.5 12.5L30 15L17.5 17.5L15 30L12.5 17.5L0 15L12.5 12.5L15 0Z"
                 fill="currentColor"

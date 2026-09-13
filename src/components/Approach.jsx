@@ -11,7 +11,11 @@ const stepGradients = [
 
 export default function Approach() {
   return (
-    <section id="about" aria-labelledby="approach-heading" className="pt-7.5 pb-11.25">
+    <section
+      id="about"
+      aria-labelledby="approach-heading"
+      className="pt-7.5 pb-11.25"
+    >
       <div className="mx-auto w-full max-w-page px-5 md:px-8 lg:px-12">
         <motion.div
           variants={rise}
@@ -28,10 +32,14 @@ export default function Approach() {
               id="approach-heading"
               className="mt-1.5 mb-4 font-black text-h2 text-ink"
             >
-              We keep it simple<br />
+              We keep it simple
+              <br />
               <span className="block">but effective.</span>
             </h2>
-            <div className="h-1 w-13 rounded-full bg-brand" aria-hidden="true" />
+            <div
+              className="h-1 w-13 rounded-full bg-brand"
+              aria-hidden="true"
+            />
           </div>
 
           {/* Right steps with connecting dotted line */}

@@ -31,7 +31,8 @@ const services = [
   },
   {
     title: "Digital Growth",
-    description: "Data-driven strategies to take your business to the next level.",
+    description:
+      "Data-driven strategies to take your business to the next level.",
     image: digitalGrowth,
     width: 1448,
     height: 1086,
@@ -52,7 +53,6 @@ export default function Services({ onOpenContact }) {
       className="w-full pt-2.5 pb-7.5 sm:pt-3.75 lg:pt-4.5 lg:pb-8.5"
     >
       <div className="mx-auto w-full max-w-page px-5 md:px-8 lg:px-12">
-
         {/* The design has no visible services heading; keep one for crawlers
             and screen readers without changing the layout. */}
         <h2 id="services-heading" className="sr-only">
@@ -112,7 +112,6 @@ export default function Services({ onOpenContact }) {
             </motion.article>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

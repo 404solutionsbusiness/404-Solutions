@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    404 SOLUTIONS
    BLOG PAGE
 ========================================================= */
@@ -14,7 +14,6 @@
   max-width: 1340px;
   margin-inline: auto;
 }
-
 
 /* =========================================================
    HERO
@@ -85,7 +84,6 @@
   line-height: 1.55;
 }
 
-
 /* =========================================================
    SEARCH
 ========================================================= */
@@ -131,7 +129,6 @@
   color: #928b96;
 }
 
-
 /* =========================================================
    HERO VISUAL
 ========================================================= */
@@ -169,14 +166,9 @@
 
   border-radius: 28px;
 
-  background: linear-gradient(
-    145deg,
-    #ded4e8,
-    #c9badb
-  );
+  background: linear-gradient(145deg, #ded4e8, #c9badb);
 
-  box-shadow:
-    0 18px 28px rgba(90, 68, 112, 0.12);
+  box-shadow: 0 18px 28px rgba(90, 68, 112, 0.12);
 
   transform: rotate(-7deg);
 
@@ -198,7 +190,6 @@
 
   clip-path: polygon(0 0, 100% 0, 25% 100%);
 }
-
 
 /* =========================================================
    ROBOT
@@ -253,14 +244,9 @@
 
   border-radius: 48%;
 
-  background: linear-gradient(
-    145deg,
-    #f8eee4,
-    #e6d6c8
-  );
+  background: linear-gradient(145deg, #f8eee4, #e6d6c8);
 
-  box-shadow:
-    0 18px 24px rgba(95, 75, 100, 0.14);
+  box-shadow: 0 18px 24px rgba(95, 75, 100, 0.14);
 }
 
 .robot-face {
@@ -282,8 +268,7 @@
 
   gap: 24px;
 
-  box-shadow:
-    inset 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .robot-face i {
@@ -316,11 +301,7 @@
 
   border-radius: 14px;
 
-  background: linear-gradient(
-    145deg,
-    #d6bcfa,
-    #a982df
-  );
+  background: linear-gradient(145deg, #d6bcfa, #a982df);
 }
 
 .robot-ear.left {
@@ -342,11 +323,7 @@
 
   border-radius: 42px 42px 25px 25px;
 
-  background: linear-gradient(
-    145deg,
-    #ece0d4,
-    #d8c8bc
-  );
+  background: linear-gradient(145deg, #ece0d4, #d8c8bc);
 }
 
 .robot-body::before {
@@ -387,7 +364,6 @@
   top: 20px;
   transform: rotate(-24deg);
 }
-
 
 /* =========================================================
    LAPTOP
@@ -446,7 +422,6 @@
   transform: skewX(-15deg);
 }
 
-
 /* =========================================================
    BOOKS
 ========================================================= */
@@ -492,7 +467,6 @@
 .hero-books span:nth-child(3) {
   background: #5d4a77;
 }
-
 
 /* =========================================================
    PLANT
@@ -554,7 +528,6 @@
   transform: rotate(18deg);
 }
 
-
 /* =========================================================
    CATEGORIES
 ========================================================= */
@@ -604,7 +577,10 @@
 
   cursor: pointer;
 
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .blog-category:hover,
@@ -619,8 +595,7 @@
 
   background: var(--color-brand-pale);
 
-  box-shadow:
-    0 8px 18px rgba(104, 53, 249, 0.3);
+  box-shadow: 0 8px 18px rgba(104, 53, 249, 0.3);
 }
 
 .blog-category--active:hover,
@@ -628,7 +603,6 @@
   background: var(--color-brand-pale);
   color: #121118;
 }
-
 
 /* =========================================================
    FEATURED
@@ -789,7 +763,6 @@
   transform: translateY(-2px);
 }
 
-
 /* =========================================================
    FEATURED ART
 ========================================================= */
@@ -815,8 +788,7 @@
 
   transform: rotate(-1deg);
 
-  box-shadow:
-    0 12px 20px rgba(80, 60, 100, 0.14);
+  box-shadow: 0 12px 20px rgba(80, 60, 100, 0.14);
 }
 
 .featured-window__top {
@@ -1003,7 +975,6 @@
   height: 37px;
 }
 
-
 /* =========================================================
    POSTS
 ========================================================= */
@@ -1118,7 +1089,6 @@
   cursor: pointer;
 }
 
-
 /* =========================================================
    POST ILLUSTRATIONS
 ========================================================= */
@@ -1136,7 +1106,6 @@
 
   background: #ece4e1;
 }
-
 
 /* Mistakes */
 
@@ -1248,7 +1217,6 @@
   bottom: 20%;
 }
 
-
 /* Design */
 
 .ill-browser--design {
@@ -1303,7 +1271,6 @@
   );
 }
 
-
 /* Social */
 
 .ill-megaphone {
@@ -1317,11 +1284,7 @@
 
   border-radius: 30px 8px 8px 30px;
 
-  background: linear-gradient(
-    145deg,
-    #7152a0,
-    #523779
-  );
+  background: linear-gradient(145deg, #7152a0, #523779);
 
   transform: rotate(-25deg);
 }
@@ -1392,7 +1355,6 @@
   background: #7550a1;
   font-size: 10px;
 }
-
 
 /* Ecommerce */
 
@@ -1468,7 +1430,6 @@
   border-radius: 20px 20px 0 0;
 }
 
-
 /* Mobile */
 
 .ill-phone {
@@ -1543,7 +1504,6 @@
   width: 18px;
   height: 18px;
 }
-
 
 /* SEO */
 
@@ -1624,7 +1584,6 @@
   background: #654590;
 }
 
-
 /* =========================================================
    PAGINATION
 ========================================================= */
@@ -1658,7 +1617,10 @@
 
   cursor: pointer;
 
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .pagination-number:hover,
@@ -1675,8 +1637,7 @@
 
   color: #fff;
 
-  box-shadow:
-    0 7px 14px rgba(104, 53, 249, 0.28);
+  box-shadow: 0 7px 14px rgba(104, 53, 249, 0.28);
 }
 
 .pagination-arrow {
@@ -1699,7 +1660,6 @@
 .pagination-arrow:focus-visible:not(:disabled) .pagination-arrow--previous {
   transform: rotate(180deg);
 }
-
 
 /* =========================================================
    NEWSLETTER
@@ -1725,8 +1685,7 @@
 
   border: 1px solid rgba(255, 255, 255, 0.65);
 
-  box-shadow:
-    0 12px 28px rgba(120, 100, 80, 0.08);
+  box-shadow: 0 12px 28px rgba(120, 100, 80, 0.08);
 }
 
 .newsletter-icon {
@@ -1829,10 +1788,11 @@
 
   cursor: pointer;
 
-  box-shadow:
-    0 7px 15px rgba(104, 53, 249, 0.28);
+  box-shadow: 0 7px 15px rgba(104, 53, 249, 0.28);
 
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .newsletter-form button:hover,
@@ -1865,7 +1825,6 @@
   display: none;
 }
 
-
 /* =========================================================
    BOTTOM CTA
 ========================================================= */
@@ -1889,17 +1848,11 @@
 
   border-radius: 20px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #6936ed,
-      #5420db
-    );
+  background: linear-gradient(135deg, #6936ed, #5420db);
 
   color: #fff;
 
-  box-shadow:
-    0 18px 32px rgba(91, 45, 213, 0.24);
+  box-shadow: 0 18px 32px rgba(91, 45, 213, 0.24);
 }
 
 .blog-bottom-cta__card h2 {
@@ -1969,7 +1922,6 @@
   bottom: -70px;
 }
 
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */
@@ -1988,7 +1940,6 @@
     gap: 12px;
   }
 }
-
 
 @media (max-width: 850px) {
   .blog-hero {
@@ -2038,7 +1989,6 @@
     justify-content: flex-start;
   }
 }
-
 
 @media (max-width: 600px) {
   .blog-page .container {
@@ -2134,7 +2084,6 @@
   }
 }
 
-
 @media (max-width: 400px) {
   .blog-hero h1 {
     font-size: 35px;
@@ -2155,5 +2104,75 @@
 
   .newsletter-form button {
     padding: 0 15px;
+  }
+}
+
+/* Fluid responsive refinements for Blog only */
+.blog-page .container {
+  width: 92%;
+  max-width: var(--container-page);
+}
+.blog-hero__grid,
+.blog-featured-card,
+.blog-post-grid,
+.newsletter-card,
+.blog-bottom-cta__card,
+.blog-post-card {
+  min-width: 0;
+}
+.blog-hero h1 {
+  font-size: clamp(2.35rem, 4.5vw, 3.875rem);
+  overflow-wrap: anywhere;
+}
+.blog-post-card h3,
+.blog-featured-content h2,
+.newsletter-copy h3,
+.blog-bottom-cta__card h2 {
+  overflow-wrap: anywhere;
+}
+.blog-post-meta {
+  min-width: 0;
+  flex-wrap: wrap;
+  white-space: normal;
+}
+.blog-post-meta span {
+  min-width: 0;
+}
+.newsletter-actions {
+  width: min(100%, 370px);
+  min-width: 0;
+}
+.newsletter-form {
+  min-width: 0;
+}
+.blog-category-list {
+  min-width: 0;
+}
+.blog-hero-image,
+.blog-manual-image {
+  max-width: 100%;
+}
+
+@media (max-width: 850px) {
+  .blog-hero__visual {
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-page .container {
+    width: calc(100% - 2rem);
+    max-width: var(--container-page);
+  }
+  .blog-bottom-cta__card h2 {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+  }
+}
+@media (max-width: 1100px) {
+  .blog-hero__visual {
+    max-width: 100%;
+    margin-right: 0;
   }
 }
