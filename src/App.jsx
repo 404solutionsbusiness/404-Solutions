@@ -18,6 +18,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 export default function App() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -37,6 +38,7 @@ export default function App() {
 
   const isBlogPage = path.replace(/\/$/, "") === "/blog";
   const normalizedPath = path.replace(/\/$/, "");
+  const isAboutPage = normalizedPath === "/about";
   const isUiUxArticlePage = normalizedPath === "/blog/ui-ux-design";
   const isSocialMediaArticlePage = normalizedPath === "/blog/social-media-growth";
   const isSeoArticlePage = normalizedPath === "/blog/seo-basics";
@@ -57,10 +59,13 @@ export default function App() {
         Skip to main content
       </a>
       <Navbar
-        key={isBlogRoute ? "blog" : "home"}
+        key={isAboutPage ? "about" : isBlogRoute ? "blog" : "home"}
         onOpenContact={() => setContactOpen(true)}
         onOpenBlog={() => navigate("/blog")}
+        onOpenAbout={() => navigate("/about")}
         isBlogPage={isBlogRoute}
+        isAboutPage={isAboutPage}
+        pathname={path}
       />
       {isBlogPage ? (
         <main id="main-content">
@@ -118,6 +123,16 @@ export default function App() {
             isWebsiteConversion={normalizedPath === "/blog/website-conversion"}
           />
         </main>
+      ) : isAboutPage ? (
+        <>
+          <main id="main-content">
+            <About
+              onOpenContact={() => setContactOpen(true)}
+              onNavigate={navigate}
+            />
+          </main>
+          <Footer onOpenContact={() => setContactOpen(true)} />
+        </>
       ) : (
         <>
           <main id="main-content">

@@ -11,58 +11,34 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-/* Sections the scroll-spy can track (Blog has no section; Contact is a modal) */
-const spySections = navLinks
-  .filter((l) => !["Blog", "Contact"].includes(l.label))
-  .map((l) => ({ label: l.label, id: l.href.slice(1) }));
+function activeNavForPath(pathname) {
+  const path = pathname.replace(/\/$/, "") || "/";
+  if (path === "/") return "Home";
+  if (path === "/services" || path.startsWith("/services/")) return "Services";
+  if (path === "/work" || path.startsWith("/work/")) return "Work";
+  if (path === "/about" || path.startsWith("/about/")) return "About";
+  if (path === "/blog" || path.startsWith("/blog/")) return "Blog";
+  if (path === "/contact" || path.startsWith("/contact/")) return "Contact";
+  return "Home";
+}
 
 export default function Navbar({
   onOpenContact,
   onOpenBlog,
+  onOpenAbout,
   isBlogPage,
+  isAboutPage,
+  pathname,
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState(() => (isBlogPage ? "Blog" : "Home"));
+  const active = activeNavForPath(pathname);
 
   useEffect(() => {
-    if (isBlogPage) return;
-    const handleScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 20);
-      /* Near the top the hero and the next section both sit in the spy band,
-         so pin Home explicitly rather than letting the observer decide. */
-      if (y < 120) setActive("Home");
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isBlogPage]);
-
-  /* Highlight the section actually in view rather than the last one clicked. */
-  useEffect(() => {
-    const targets = spySections
-      .map(({ label, id }) => {
-        const el = document.getElementById(id);
-        return el ? { label, el } : null;
-      })
-      .filter(Boolean);
-    if (!targets.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (!visible) return;
-        const match = targets.find((t) => t.el === visible.target);
-        if (match) setActive(match.label);
-      },
-      { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] }
-    );
-
-    targets.forEach((t) => observer.observe(t.el));
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -112,9 +88,11 @@ export default function Navbar({
                 href={
                   link.label === "Blog"
                     ? link.href
-                    : isBlogPage
-                      ? `/${link.href}`
-                      : link.href
+                    : link.label === "About"
+                      ? "/about"
+                      : (isBlogPage || isAboutPage)
+                        ? `/${link.href}`
+                        : link.href
                 }
                 className={`relative pb-1.5 text-nav no-underline transition-colors
                             duration-200 ease-clay hover:text-ink ${
@@ -123,10 +101,13 @@ export default function Navbar({
                                 : "font-semibold text-ink-mid"
                             }`}
                 onClick={(e) => {
-                  setActive(link.label);
                   if (link.label === "Blog" && onOpenBlog) {
                     e.preventDefault();
                     onOpenBlog();
+                  }
+                  if (link.label === "About" && onOpenAbout) {
+                    e.preventDefault();
+                    onOpenAbout();
                   }
                   if (link.label === "Contact" && onOpenContact) {
                     e.preventDefault();
@@ -198,18 +179,23 @@ export default function Navbar({
                   href={
                     link.label === "Blog"
                       ? link.href
-                      : isBlogPage
-                        ? `/${link.href}`
-                        : link.href
+                      : link.label === "About"
+                        ? "/about"
+                        : (isBlogPage || isAboutPage)
+                          ? `/${link.href}`
+                          : link.href
                   }
                   className="block border-b border-black/5 py-3 text-lg font-bold
                              text-ink no-underline transition-[color,padding-left]
                              duration-200 ease-clay hover:pl-2 hover:text-brand"
                   onClick={(e) => {
-                    setActive(link.label);
                     if (link.label === "Blog" && onOpenBlog) {
                       e.preventDefault();
                       onOpenBlog();
+                    }
+                    if (link.label === "About" && onOpenAbout) {
+                      e.preventDefault();
+                      onOpenAbout();
                     }
                     if (link.label === "Contact" && onOpenContact) {
                       e.preventDefault();
