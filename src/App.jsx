@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { AnimatePresence, MotionConfig } from "framer-motion";
 import Navbar from "./components/Navbar";
@@ -11,6 +11,7 @@ import MobileFirstArticle from "./components/MobileFirstArticle";
 import EcommerceArticle from "./components/EcommerceArticle";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
+import ServicesPage from "./components/ServicesPage";
 import Approach from "./components/Approach";
 import Work from "./components/Work";
 import SocialMedia from "./components/SocialMedia";
@@ -40,6 +41,7 @@ export default function App() {
   const isBlogPage = path.replace(/\/$/, "") === "/blog";
   const normalizedPath = path.replace(/\/$/, "");
   const isAboutPage = normalizedPath === "/about";
+  const isServicesPage = normalizedPath === "/services";
   const isContactPage = normalizedPath === "/contact";
   const isUiUxArticlePage = normalizedPath === "/blog/ui-ux-design";
   const isSocialMediaArticlePage = normalizedPath === "/blog/social-media-growth";
@@ -61,7 +63,7 @@ export default function App() {
         Skip to main content
       </a>
       <Navbar
-        key={isAboutPage ? "about" : isBlogRoute ? "blog" : "home"}
+        key={isServicesPage ? "services" : isAboutPage ? "about" : isBlogRoute ? "blog" : "home"}
         onOpenContact={() => setContactOpen(true)}
         onOpenBlog={() => navigate("/blog")}
         onOpenAbout={() => navigate("/about")}
@@ -69,7 +71,12 @@ export default function App() {
         isAboutPage={isAboutPage}
         pathname={path}
       />
-      {isBlogPage ? (
+      {isServicesPage ? (
+        <>
+          <main id="main-content"><ServicesPage onOpenContact={() => setContactOpen(true)} /></main>
+          <Footer onOpenContact={() => setContactOpen(true)} />
+        </>
+      ) : isBlogPage ? (
         <main id="main-content">
           <Blog
             onOpenContact={() => setContactOpen(true)}
@@ -162,3 +169,5 @@ export default function App() {
     </MotionConfig>
   );
 }
+
+

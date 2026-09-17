@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import {
   ArrowRight,
   CheckCircle,
@@ -146,7 +146,7 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="contact-hero-art flex justify-center">
           <img
             src={contactHero}
             alt="404 Solutions robot ready to talk"
@@ -417,3 +417,6 @@ export default function ContactPage() {
     </main>
   );
 }
+
+
+

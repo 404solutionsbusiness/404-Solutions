@@ -1,7 +1,7 @@
-import webDevIcon from '../assets/services/web-development.png';
-import uiuxIcon from '../assets/services/uiux-design.png';
-import socialIcon from '../assets/services/social-media.png';
-import digitalGrowthIcon from '../assets/services/digital-growth.png';
+import webDevIcon from '../assets/services/web-development.webp';
+import uiuxIcon from '../assets/services/uiux-design.webp';
+import socialIcon from '../assets/services/social-media.webp';
+import digitalGrowthIcon from '../assets/services/digital-growth.webp';
 
 // Team member avatars
 import sudipImg from '../assets/about/team/sudip.webp';
@@ -317,3 +317,4 @@ export const faqItems = [
     audioFile: '08-how-can-i-get-started-with-404-solutions.mp3',
   },
 ];
+

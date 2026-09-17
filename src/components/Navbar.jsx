@@ -1,10 +1,10 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Work", href: "/#work" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
@@ -211,3 +211,4 @@ export default function Navbar({
     </>
   );
 }
+

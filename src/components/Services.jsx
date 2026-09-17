@@ -2,10 +2,10 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { rise, stagger, revealProps } from "./motion";
 
-import webDevelopment from "../assets/services/web-development.png";
-import uiuxDesign from "../assets/services/uiux-design.png";
-import socialMedia from "../assets/services/social-media.png";
-import digitalGrowth from "../assets/services/digital-growth.png";
+import webDevelopment from "../assets/services/web-development.webp";
+import uiuxDesign from "../assets/services/uiux-design.webp";
+import socialMedia from "../assets/services/social-media.webp";
+import digitalGrowth from "../assets/services/digital-growth.webp";
 
 const services = [
   {
@@ -116,3 +116,4 @@ export default function Services({ onOpenContact }) {
     </section>
   );
 }
+

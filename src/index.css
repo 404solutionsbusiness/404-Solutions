@@ -437,3 +437,20 @@
     }
   }
 }
+
+
+/* Contact hero artwork polish, matching the Services illustration treatment. */
+.contact-hero-art{position:relative;isolation:isolate;min-width:0}
+.contact-hero-art::before{content:"";position:absolute;inset:14% 8%;z-index:-1;border-radius:50%;background:radial-gradient(circle,#d9caff 0%,rgb(217 202 255 / .48) 38%,transparent 72%);filter:blur(30px);opacity:.78}
+.contact-hero-art img{position:relative;display:block;filter:drop-shadow(0 18px 25px rgb(74 51 29 / .1));animation:contact-hero-float 6s ease-in-out infinite}
+@keyframes contact-hero-float{50%{transform:translateY(-7px)}}
+@media(prefers-reduced-motion:reduce){.contact-hero-art img{animation:none}}
+
+
+
+/* Contact feature polish: a restrained interactive lift for the three highlights. */
+.contact-feature{border-radius:18px;padding:.35rem;transition:transform .25s ease,filter .25s ease}
+.contact-feature:hover{transform:translateY(-4px);filter:drop-shadow(0 10px 16px rgb(104 53 249 / .12))}
+.contact-feature>div:first-child{transition:transform .25s ease,background-color .25s ease,box-shadow .25s ease}
+.contact-feature:hover>div:first-child{transform:scale(1.08);background:var(--color-brand-pale);box-shadow:0 8px 18px rgb(104 53 249 / .18)}
+@media(prefers-reduced-motion:reduce){.contact-feature,.contact-feature>div:first-child{transition:none}.contact-feature:hover,.contact-feature:hover>div:first-child{transform:none;filter:none}}
