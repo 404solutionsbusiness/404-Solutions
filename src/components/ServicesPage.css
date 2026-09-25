@@ -16,3 +16,11 @@
 @media(prefers-reduced-motion:reduce){.services-process,.process-icon{transition:none}.services-process:hover,.process-step:hover .process-icon{transform:none}}
 
 
+
+/* Mobile process layout: keep the intro above a readable 2x2 step grid. */
+@media (max-width:639px){
+  .services-process{grid-template-columns:1fr;gap:1.5rem}
+  .process-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem 1.4rem}
+  .process-step{min-width:0}
+  .process-step p{max-width:10rem}
+}
