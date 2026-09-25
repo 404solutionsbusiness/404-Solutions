@@ -1,4 +1,4 @@
-﻿import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 
 const footerLinks = {
   Services: [
@@ -7,7 +7,7 @@ const footerLinks = {
     "Social Media",
     "Digital Growth",
   ],
-  Company: ["About Us", "Our Work", "Blog", "Careers"],
+  Company: [{ label: "About Us", href: "/about" }, { label: "Our Work", href: "/#work" }, { label: "Blog", href: "/blog" }, { label: "Services", href: "/services" }],
   Support: ["Help Center", "FAQ", "Terms & Conditions", "Privacy Policy"],
 };
 
@@ -181,17 +181,23 @@ export default function Footer({ onOpenContact }) {
                 role="list"
                 className="flex list-none flex-col gap-2.5 p-0 sm:gap-3"
               >
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#contact"
-                      className={linkClass}
-                      onClick={handleContact}
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const isCompanyLink = columnName === "Company";
+                  const isFaqLink = columnName === "Support" && link === "FAQ";
+                  const label = isCompanyLink ? link.label : link;
+                  const href = isCompanyLink ? link.href : isFaqLink ? "/about#faq" : "#contact";
+                  return (
+                    <li key={label}>
+                      <a
+                        href={href}
+                        className={linkClass}
+                        onClick={isCompanyLink || isFaqLink ? undefined : handleContact}
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -262,3 +268,7 @@ export default function Footer({ onOpenContact }) {
     </footer>
   );
 }
+
+
+
+

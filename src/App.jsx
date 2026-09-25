@@ -32,6 +32,22 @@ export default function App() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
+  useEffect(() => {
+    const scrollToHash = () => {
+      if (!window.location.hash) return;
+      const targetId = decodeURIComponent(window.location.hash.slice(1));
+      requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    };
+
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
+  }, [path]);
   const navigate = (nextPath) => {
     window.history.pushState({}, "", nextPath);
     setPath(nextPath);
@@ -169,5 +185,6 @@ export default function App() {
     </MotionConfig>
   );
 }
+
 
 
