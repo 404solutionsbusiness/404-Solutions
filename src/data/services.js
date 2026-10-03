@@ -8,15 +8,15 @@
   },
   {
     id: "ui-ux",
-    title: "UI/UX Design",
-    description: "Beautiful interfaces that your users will love.",
+    title: "UI/UX & Graphic Design",
+    description: "Beautiful digital experiences, graphics & visuals that your audience will love.",
     color: "#f5c842",
     bg: "#fffbeb",
   },
   {
     id: "social",
     title: "Social Media",
-    description: "Content, strategy & management that grows your brand.",
+    description: "Content, creative design, strategy & management that grows your brand.",
     color: "#ec4899",
     bg: "#fdf2f8",
   },

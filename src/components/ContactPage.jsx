@@ -24,6 +24,7 @@ import contactHero from "../assets/CONTACT-PAGE/HERO IMAGE.webp";
 const services = [
   "Web Development",
   "UI/UX Design",
+  "Branding & Identity",
   "Social Media",
   "Digital Growth",
   "Other",

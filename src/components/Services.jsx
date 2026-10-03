@@ -16,15 +16,15 @@ const services = [
     height: 1082,
   },
   {
-    title: "UI/UX Design",
-    description: "Beautiful interfaces that your users will love.",
+    title: "UI/UX & Graphic Design",
+    description: "Beautiful digital experiences, graphics & visuals that your audience will love.",
     image: uiuxDesign,
     width: 1448,
     height: 1086,
   },
   {
     title: "Social Media",
-    description: "Content, strategy & management that grows your brand.",
+    description: "Content, creative design, strategy & management that grows your brand.",
     image: socialMedia,
     width: 1448,
     height: 1086,

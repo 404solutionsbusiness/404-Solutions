@@ -28,8 +28,8 @@ export const whatWeDo = [
   },
   {
     id: 'ui-ux',
-    title: 'UI/UX Design',
-    description: 'Clean, intuitive experiences designed for real users.',
+    title: 'UI/UX & Graphic Design',
+    description: 'Clean, intuitive experiences and creative visuals designed for real users.',
     icon: uiuxIcon,
   },
   {
@@ -96,7 +96,7 @@ export const whyChoose404 = [
   },
 ];
 
-// EXACTLY 7 TEAM MEMBERS
+// Team members
 export const teamMembers = [
   {
     id: 'sudip',
@@ -139,6 +139,11 @@ export const teamMembers = [
     name: 'Soumik Pal',
     role: 'SEO & Growth',
     image: tusharImg,
+  },
+  {
+    id: 'bidisha-roy',
+    name: 'Bidisha Roy',
+    role: 'Graphic Designer',
   },
 ];
 

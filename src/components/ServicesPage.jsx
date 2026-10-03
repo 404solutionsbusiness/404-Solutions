@@ -9,7 +9,7 @@ const services = [
   ["UI/UX Design", "User-centered designs that make your brand memorable.", ["UI/UX for Web & Mobile", "Prototyping & Wireframes", "Design Systems"], PenTool],
   ["SEO & Digital Growth", "Get discovered, drive traffic, and turn visitors into customers.", ["On-Page & Off-Page SEO", "Keyword Strategy", "Growth Consulting"], BarChart3],
   ["Social Media Marketing", "Build your brand presence and engage your audience.", ["Content Strategy", "Social Media Management", "Paid Campaigns"], Megaphone],
-  ["Branding & Identity", "Create a unique identity that connects and converts.", ["Logo & Visual Identity", "Brand Strategy", "Marketing Collateral"], Sparkles],
+  ["Branding & Identity", "Build a consistent visual identity that makes your brand recognizable and memorable.", ["Logo & Visual Identity", "Brand Graphics", "Marketing Collateral"], Sparkles],
   ["Other Services", "Need something custom? We're just a conversation away.", ["Consultation", "Maintenance & Support", "Custom Solutions"], MoreHorizontal],
 ];
 const process = [["01", "Discover", "We understand your goals.", Search], ["02", "Plan", "We create a custom strategy.", FileText], ["03", "Build", "We design and develop.", Activity], ["04", "Grow", "We optimize for long-term success.", BarChart3]];

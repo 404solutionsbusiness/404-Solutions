@@ -19,6 +19,7 @@ import { EASE_CLAY } from "./motion";
 const serviceOptions = [
   "Web Development",
   "UI/UX Design",
+  "Branding & Identity",
   "Social Media",
   "Digital Growth",
   "Other",

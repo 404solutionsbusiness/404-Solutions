@@ -21,6 +21,7 @@ import Contact from "./components/Contact";
 import ContactPage from "./components/ContactPage";
 import Footer from "./components/Footer";
 import About from "./components/About";
+import { updateSeo } from "./seo";
 
 export default function App() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -48,6 +49,10 @@ export default function App() {
     window.addEventListener("hashchange", scrollToHash);
     return () => window.removeEventListener("hashchange", scrollToHash);
   }, [path]);
+  useEffect(() => {
+    updateSeo(path);
+  }, [path]);
+
   const navigate = (nextPath) => {
     window.history.pushState({}, "", nextPath);
     setPath(nextPath);
@@ -185,6 +190,7 @@ export default function App() {
     </MotionConfig>
   );
 }
+
 
 
 

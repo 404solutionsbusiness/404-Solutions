@@ -3,9 +3,10 @@ import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 const footerLinks = {
   Services: [
     "Web Development",
-    "UI/UX Design",
+    "UI/UX & Graphic Design",
     "Social Media",
     "Digital Growth",
+    "Branding & Identity",
   ],
   Company: [{ label: "About Us", href: "/about" }, { label: "Our Work", href: "/#work" }, { label: "Blog", href: "/blog" }, { label: "Services", href: "/services" }],
   Support: ["Help Center", "FAQ", "Terms & Conditions", "Privacy Policy"],

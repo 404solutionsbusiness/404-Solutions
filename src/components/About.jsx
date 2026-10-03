@@ -229,6 +229,11 @@ export default function About({ onOpenContact, onNavigate }) {
                   That’s why we combine strategy, design, development, and
                   digital growth under one roof.
                 </p>
+                <p>
+                  From your logo and visual identity to your website and
+                  digital presence, we help your brand look consistent,
+                  professional, and memorable.
+                </p>
               </div>
             </div>
             <img
@@ -248,14 +253,14 @@ export default function About({ onOpenContact, onNavigate }) {
           <Title
             label="WHAT WE DO"
             title="Everything You Need to Grow Online."
-            copy="From your first idea to long-term growth, we bring the essential digital pieces together."
+            copy="From websites and UI/UX to brand visuals, social media and digital growth, we help businesses build a stronger digital presence."
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {whatWeDo.map((item) => (
               <motion.article
                 {...reveal}
                 key={item.id}
-                className="group rounded-2xl border border-white/80 bg-white/75 p-5 shadow-tile transition hover:-translate-y-1 hover:shadow-tile-hover"
+                className="group flex flex-col rounded-2xl border border-white/80 bg-white/75 p-5 shadow-tile transition hover:-translate-y-1 hover:shadow-tile-hover"
               >
                 <div className="flex h-16 items-center">
                   <img
@@ -272,7 +277,7 @@ export default function About({ onOpenContact, onNavigate }) {
                   href="#contact"
                   onClick={talk}
                   aria-label={`Talk to us about ${item.title}`}
-                  className="mt-4 flex size-7 items-center justify-center rounded-full bg-brand text-white"
+                  className="mt-auto flex size-7 items-center justify-center rounded-full bg-brand text-white"
                 >
                   <ArrowUpRight size={14} />
                 </a>
@@ -408,8 +413,8 @@ export default function About({ onOpenContact, onNavigate }) {
                 }
                 copy="A small team with big ideas."
               />
-              <div className="grid grid-cols-2 gap-x-2 gap-y-5 sm:grid-cols-4 lg:grid-cols-7">
-                {teamMembers.slice(0, 7).map((m) => {
+              <div className="grid grid-cols-2 gap-x-2 gap-y-5 sm:grid-cols-4 lg:grid-cols-8">
+                {teamMembers.map((m) => {
                   const image = teamAssetFor(m.name);
                   return (
                     <motion.div
